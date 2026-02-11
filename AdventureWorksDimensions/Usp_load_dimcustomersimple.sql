@@ -42,4 +42,4 @@ AS
           PRINT 'Error occurred in usp_Load_DimCustomerSimple: '
                 + Error_message();
       END catch
-  END; 
+  END;

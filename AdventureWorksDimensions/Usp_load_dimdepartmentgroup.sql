@@ -32,4 +32,4 @@ AS
           PRINT 'Error occurred in usp_Load_DimDepartmentGroup: '
                 + Error_message();
       END catch
-  END; 
+  END;

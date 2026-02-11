@@ -150,4 +150,4 @@ AS
       ROLLBACK TRANSACTION;
       PRINT 'Error occurred in usp_Load_DimCustomer: ' + Error_message();
     END catch
-  END;
+  END

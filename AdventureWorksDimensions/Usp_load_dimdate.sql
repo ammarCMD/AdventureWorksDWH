@@ -122,4 +122,4 @@ AS
           PRINT 'Error occurred in usp_Load_DimDate: '
                 + Error_message();
       END catch
-  END; 
+  END;

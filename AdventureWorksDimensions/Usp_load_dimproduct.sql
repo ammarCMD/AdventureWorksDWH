@@ -159,4 +159,4 @@ AS
           PRINT 'Error occurred in usp_Load_DimProduct: '
                 + Error_message();
       END catch
-  END; 
+  END;

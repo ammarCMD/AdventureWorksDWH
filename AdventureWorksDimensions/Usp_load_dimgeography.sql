@@ -54,4 +54,4 @@ BEGIN
         IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
         PRINT 'Error occurred in usp_Load_DimGeography: ' + ERROR_MESSAGE();
     END CATCH
-END;
+END; 

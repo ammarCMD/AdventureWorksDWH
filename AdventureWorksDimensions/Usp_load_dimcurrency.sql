@@ -39,4 +39,4 @@ BEGIN
     END CATCH
 
     SELECT @RowsAffected AS RowsInserted;
-END;
+END

@@ -50,4 +50,4 @@ BEGIN
           AND Status = 'Started'
           AND EndTime IS NULL;
     END
-END
+END;
