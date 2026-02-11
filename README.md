@@ -12,47 +12,57 @@ Key Features
 - Restartability: Procedures are designed to resume from checkpoints on failure.
 - Batch loading: Support for batch loads and master batch orchestration.
 
-Repository Structure (visible)
+
+Repository Structure
 -----------------------------
-Top-level folders and important scripts:
+The repository is organized by purpose; stored procedures are grouped into folders for dimensions, facts, and batch operations.
 
-AdventureWorksDimensions/
-	Usp_load_dimcurrency.sql
-	usp_load_dimcustomer.sql
-	usp_load_dimcustomersimple.sql
-	Usp_load_dimdate.sql
-	Usp_load_dimdepartmentgroup.sql
-	Usp_load_dimemployee.sql
-	Usp_load_dimgeography.sql
-	Usp_load_dimorganization.sql
-	Usp_load_dimproduct.sql
-	Usp_load_dimproductcategory.sql
-	Usp_load_dimproductsubcategory.sql
-	Usp_load_dimpromotion.sql
-	Usp_load_dimreseller.sql
-	Usp_load_dimsalesreason.sql
-	Usp_load_dimsalesterritory.sql
-	Usp_load_dimscenario.sql
+```
+.
+├─ AdventureWorksDimensions/        # Dimension loader stored procedures (metadata-driven)
+│   ├─ Usp_load_dimcurrency.sql
+│   ├─ usp_load_dimcustomer.sql
+│   ├─ Usp_load_dimcustomersimple.sql
+│   ├─ Usp_load_dimdate.sql
+│   ├─ Usp_load_dimdepartmentgroup.sql
+│   ├─ Usp_load_dimemployee.sql
+│   ├─ Usp_load_dimgeography.sql
+│   ├─ Usp_load_dimorganization.sql
+│   ├─ Usp_load_dimproduct.sql
+│   ├─ Usp_load_dimproductcategory.sql
+│   ├─ Usp_load_dimproductsubcategory.sql
+│   ├─ Usp_load_dimpromotion.sql
+│   ├─ Usp_load_dimreseller.sql
+│   ├─ Usp_load_dimsalesreason.sql
+│   └─ Usp_load_dimsalesterritory.sql
 
-AdventureWorksFacts/
-	Usp_load_factadditionalinternationalproductdescription.sql
-	Usp_load_factcallcenter.sql
-	Usp_load_factcurrencyrate.sql
-	Usp_load_factfinance.sql
-	Usp_load_factinternetsales.sql
-	Usp_load_factinternetsalesreason.sql
-	Usp_load_factproductinventory.sql
-	Usp_load_factresellersales.sql
-	Usp_load_factsalesquota.sql
-	Usp_load_factsurveyresponse.sql
-	Usp_load_newfactcurrencyrate.sql
+├─ AdventureWorksFacts/             # Fact loader stored procedures
+│   ├─ Usp_load_factadditionalinternationalproductdescription.sql
+│   ├─ Usp_load_factcallcenter.sql
+│   ├─ Usp_load_factcurrencyrate.sql
+│   ├─ Usp_load_factfinance.sql
+│   ├─ Usp_load_factinternetsales.sql
+│   ├─ Usp_load_factinternetsalesreason.sql
+│   ├─ Usp_load_factproductinventory.sql
+│   ├─ Usp_load_factresellersales.sql
+│   ├─ Usp_load_factsalesquota.sql
+│   ├─ Usp_load_factsurveyresponse.sql
+│   └─ Usp_load_newfactcurrencyrate.sql
 
-BatchOperations/
-	batchload.sql
-	usp_ETL_Log.sql
-	usp_LoadCustomerBatch.sql
-	usp_Master_ETL_Load.sql
-	uspAllProcDynamic.sql
+├─ BatchOperations/                 # Batch orchestration, logging and helpers
+│   ├─ batchload.sql
+│   ├─ usp_ETL_Log.sql
+│   ├─ usp_LoadCustomerBatch.sql
+│   ├─ usp_Master_ETL_Load.sql
+   └─ uspAllProcDynamic.sql
+
+└─ LICENSE                          # Repository license
+```
+
+Notes:
+- See each script for implementation details and required metadata tables.
+- Use `BatchOperations/` to run full batch loads and to consult the ETL log for restart points.
+
 
 How it works
 ------------
